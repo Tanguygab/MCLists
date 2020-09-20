@@ -1,0 +1,18 @@
+default-outputs-format:
+  list:
+    seperator: ', '
+    amount: -1
+    name: '&a%value%&r'
+  amount: '&a%value%'
+  value: '&a%value%'
+lists:
+  All:
+    type: players
+    filter: all
+    subtype: normal
+    countSelf: true
+  Online:
+    type: players
+    filter: online
+    subtype: normal
+    countSelf: true
