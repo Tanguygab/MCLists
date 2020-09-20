@@ -6,7 +6,6 @@ import java.util.List;
 
 import io.github.tanguygab.mclists.lists.Lists;
 import io.github.tanguygab.mclists.lists.players.SubTypes.*;
-import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
@@ -21,7 +20,6 @@ public abstract class SubType {
         this.output = output;
         this.subTypeValue = subTypeValue;
     }
-
 
     protected String format(List<String> collection) {
         Collections.sort(collection);
@@ -44,24 +42,24 @@ public abstract class SubType {
         switch (subtype) {
             case "normal":
                 return new Normal(countSelf, output, subtypevalue);
-            /*case "perm":
+            case "perm":
                 return new Permission(countSelf, output, subtypevalue);
             case "world":
                 return new World(countSelf, output, subtypevalue);
             case "nearby":
                 return new Nearby(countSelf, output, subtypevalue);
             case "whitelisted":
-                return new WhiteListed(countSelf, output, subtypevalue);
+                return new Whitelisted(countSelf, output, subtypevalue);
             case "banned":
                 return new Banned(countSelf, output, subtypevalue);
             case "cansee":
                 return new CanSee(countSelf, output, subtypevalue);
             case "placeholder":
                 return new Placeholder(countSelf, output, subtypevalue);
-            case "version":
-                return new Version(countSelf, output, subtypevalue);
             case "gamemode":
-                return new Gamemode(countSelf, output, subtypevalue);*/
+                return new Gamemode(countSelf, output, subtypevalue);
+            /*case "version":
+                return new Version(countSelf, output, subtypevalue);*/
             default:
                 return null;
         }

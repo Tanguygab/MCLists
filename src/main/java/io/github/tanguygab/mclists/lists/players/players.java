@@ -32,12 +32,13 @@ public class players extends Lists {
         String output = "list";
         String subtypeValue = config.getString("lists." + name + ".subtypeValue");
 
+        assert filter != null;
         assert subtype != null;
         assert subtypeValue != null;
         SubType subType = SubType.compile(subtype, countself, output, subtypeValue);
         if (filter.equals("all")) return new All(subType);
-        /*if (filter.equals("online")) return new Online(subType);
-        if (filter.equals("offline")) return new Offline(subType);*/
+        if (filter.equals("online")) return new Online(subType);
+        if (filter.equals("offline")) return new Offline(subType);
 
         return new InvalidPlayers("This list doesn't have a valid filter!");
     }

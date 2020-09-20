@@ -62,7 +62,6 @@ public class MCLists extends JavaPlugin implements CommandExecutor {
             reload();
             sender.sendMessage("§7Reloading config... Reloaded " + lists.size() + " lists.");
         } else if (args[0].equals("get")) {
-            sender.sendMessage("§cNot available yet :/ Kinda the main feature lol");
             if (sender instanceof Player) {
                 if (args.length < 2) sender.sendMessage("§cYou have to provide a list!");
                 if (args.length < 3) sender.sendMessage("§cYou have to provide a type of output!");
