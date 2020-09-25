@@ -11,8 +11,8 @@ import static java.lang.Boolean.parseBoolean;
 
 public class CanSee extends SubType {
 
-    public CanSee(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public CanSee(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

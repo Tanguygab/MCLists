@@ -9,8 +9,8 @@ import java.util.Collection;
 
 public class World extends SubType {
 
-    public World(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public World(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

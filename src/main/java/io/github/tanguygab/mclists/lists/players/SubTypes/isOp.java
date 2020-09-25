@@ -1,15 +1,15 @@
 package io.github.tanguygab.mclists.lists.players.SubTypes;
 
 import io.github.tanguygab.mclists.lists.players.SubType;
-import org.bukkit.entity.Player;
 import org.bukkit.OfflinePlayer;
-import java.util.ArrayList;
+import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
-public class Normal extends SubType {
+public class isOp extends SubType {
 
-    public Normal(boolean countSelf, String subtypevalue) {
+    public isOp(boolean countSelf, String subtypevalue) {
         super(countSelf, subtypevalue);
     }
 
@@ -19,7 +19,9 @@ public class Normal extends SubType {
         ArrayList<String> players = new ArrayList<>();
             for (OfflinePlayer p : list) {
                 if (countSelf || !p.getName().equals(player.getName())) {
-                    players.add(p.getName());
+                    if (p.isOp()) {
+                        players.add(p.getName());
+                    }
                 }
             }
             return format(players);

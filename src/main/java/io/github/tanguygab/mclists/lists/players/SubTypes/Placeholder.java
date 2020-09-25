@@ -10,8 +10,8 @@ import java.util.Collection;
 
 public class Placeholder extends SubType {
 
-    public Placeholder(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public Placeholder(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

@@ -12,12 +12,10 @@ import org.bukkit.entity.Player;
 public abstract class SubType {
 
     protected boolean countSelf;
-    protected String output;
     protected String subTypeValue;
 
-    public SubType(boolean countSelf, String output, String subTypeValue) {
+    public SubType(boolean countSelf, String subTypeValue) {
         this.countSelf = countSelf;
-        this.output = output;
         this.subTypeValue = subTypeValue;
     }
 
@@ -37,29 +35,33 @@ public abstract class SubType {
 
     public abstract String getText(Player player, Collection<? extends OfflinePlayer> list);
 
-    public static SubType compile(String subtype, boolean countSelf, String output, String subtypevalue) {
+    public static SubType compile(String subtype, boolean countSelf, String subtypevalue) {
 
         switch (subtype) {
             case "normal":
-                return new Normal(countSelf, output, subtypevalue);
+                return new Normal(countSelf, subtypevalue);
             case "perm":
-                return new Permission(countSelf, output, subtypevalue);
+                return new Permission(countSelf, subtypevalue);
             case "world":
-                return new World(countSelf, output, subtypevalue);
+                return new World(countSelf, subtypevalue);
             case "nearby":
-                return new Nearby(countSelf, output, subtypevalue);
+                return new Nearby(countSelf, subtypevalue);
             case "whitelisted":
-                return new Whitelisted(countSelf, output, subtypevalue);
+                return new Whitelisted(countSelf, subtypevalue);
             case "banned":
-                return new Banned(countSelf, output, subtypevalue);
+                return new Banned(countSelf, subtypevalue);
             case "cansee":
-                return new CanSee(countSelf, output, subtypevalue);
+                return new CanSee(countSelf,  subtypevalue);
             case "placeholder":
-                return new Placeholder(countSelf, output, subtypevalue);
+                return new Placeholder(countSelf, subtypevalue);
             case "gamemode":
-                return new Gamemode(countSelf, output, subtypevalue);
-            /*case "version":
-                return new Version(countSelf, output, subtypevalue);*/
+                return new Gamemode(countSelf, subtypevalue);
+            case "version":
+                return new Version(countSelf, subtypevalue);
+            case "isop":
+                return new isOp(countSelf, subtypevalue);
+            case "money":
+                return new Money(countSelf, subtypevalue);
             default:
                 return null;
         }

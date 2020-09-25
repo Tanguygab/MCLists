@@ -9,8 +9,8 @@ import java.util.Collection;
 
 public class Gamemode extends SubType {
 
-    public Gamemode(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public Gamemode(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

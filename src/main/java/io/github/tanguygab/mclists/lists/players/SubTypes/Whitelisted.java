@@ -9,8 +9,8 @@ import java.util.Collection;
 
 public class Whitelisted extends SubType {
 
-    public Whitelisted(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public Whitelisted(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

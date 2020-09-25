@@ -9,8 +9,8 @@ import java.util.Collection;
 
 public class Permission extends SubType {
 
-    public Permission(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public Permission(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

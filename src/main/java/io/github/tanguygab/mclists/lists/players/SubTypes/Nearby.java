@@ -9,8 +9,8 @@ import java.util.Collection;
 
 public class Nearby extends SubType {
 
-    public Nearby(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public Nearby(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override

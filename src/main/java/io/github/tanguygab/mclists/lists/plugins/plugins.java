@@ -1,19 +1,19 @@
-package io.github.tanguygab.mclists.lists.players;
+package io.github.tanguygab.mclists.lists.plugins;
 
 import io.github.tanguygab.mclists.lists.Lists;
-import io.github.tanguygab.mclists.lists.players.Filters.*;
+import io.github.tanguygab.mclists.lists.plugins.Filters.*;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
-public class players extends Lists {
+public class plugins extends Lists {
 
     protected static SubType subtype;
     protected static String name;
-    protected players() {}
+    protected plugins() {}
 
-    protected players(SubType subtype) {
-        players.subtype = subtype;
+    protected plugins(SubType subtype) {
+        plugins.subtype = subtype;
     }
 
     @Override
@@ -21,24 +21,22 @@ public class players extends Lists {
         return "null";
     }
 
-    public static players compile(String name) {
-        players.name = name;
+    public static plugins compile(String name) {
+        plugins.name = name;
         ConfigurationSection config = Bukkit.getServer().getPluginManager().getPlugin("MCLists").getConfig();
         String filter = config.getString("lists." + name + ".filter");
         String subtype = config.getString("lists." + name + ".subtype");
         boolean countself = config.getBoolean("lists." + name + ".countSelf");
-        String subtypeValue = config.getString("lists." + name + ".subtypeValue");
 
         assert filter != null;
         assert subtype != null;
-        assert subtypeValue != null;
 
         filter = filter.toLowerCase();
-        SubType subType = SubType.compile(subtype.toLowerCase(), countself, subtypeValue);
+        SubType subType = SubType.compile(subtype.toLowerCase(), countself);
         if (filter.equals("all")) return new All(subType);
-        if (filter.equals("online")) return new Online(subType);
-        if (filter.equals("offline")) return new Offline(subType);
+        if (filter.equals("enabled")) return new Enabled(subType);
+        if (filter.equals("disabled")) return new Disabled(subType);
 
-        return new InvalidPlayers("This list doesn't have a valid filter!");
+        return new InvalidPlugins("This list doesn't have a valid filter!");
     }
 }

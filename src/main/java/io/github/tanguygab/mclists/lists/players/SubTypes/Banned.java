@@ -9,8 +9,8 @@ import java.util.Collection;
 
 public class Banned extends SubType {
 
-    public Banned(boolean countSelf, String output, String subtypevalue) {
-        super(countSelf, output, subtypevalue);
+    public Banned(boolean countSelf, String subtypevalue) {
+        super(countSelf, subtypevalue);
     }
 
     @Override
