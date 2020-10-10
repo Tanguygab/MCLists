@@ -26,13 +26,13 @@ public class plugins extends Lists {
         ConfigurationSection config = Bukkit.getServer().getPluginManager().getPlugin("MCLists").getConfig();
         String filter = config.getString("lists." + name + ".filter");
         String subtype = config.getString("lists." + name + ".subtype");
-        boolean countself = config.getBoolean("lists." + name + ".countSelf");
+        String subtypeValue = config.getString("lists." + name + ".subtypeValue");;
 
         assert filter != null;
         assert subtype != null;
 
         filter = filter.toLowerCase();
-        SubType subType = SubType.compile(subtype.toLowerCase(), countself);
+        SubType subType = SubType.compile(subtype.toLowerCase(), subtypeValue);
         if (filter.equals("all")) return new All(subType);
         if (filter.equals("enabled")) return new Enabled(subType);
         if (filter.equals("disabled")) return new Disabled(subType);

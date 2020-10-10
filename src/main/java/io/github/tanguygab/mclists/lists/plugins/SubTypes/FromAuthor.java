@@ -7,9 +7,9 @@ import org.bukkit.plugin.Plugin;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Normal extends SubType {
+public class FromAuthor extends SubType {
 
-    public Normal(String subtypeValue) {
+    public FromAuthor(String subtypeValue) {
         super(subtypeValue);
     }
 
@@ -18,7 +18,8 @@ public class Normal extends SubType {
 
         ArrayList<String> plugins = new ArrayList<>();
             for (Plugin pl : list)
-                plugins.add(pl.getName());
+                if (pl.getDescription().getAuthors().contains(subtypeValue))
+                    plugins.add(pl.getName());
 
             return format(plugins);
     }

@@ -36,7 +36,9 @@ public class MCLists extends JavaPlugin implements CommandExecutor, TabCompleter
         getLogger().info("Hey you!");
         saveDefaultConfig();
         reload();
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+        if (getServer().getPluginManager().getPlugin("Vault") != null)
+            new PAPIHook(this).register();
+        if (getServer().getPluginManager().getPlugin("Vault") != null) {
             new Hooks().setupEco();
             new Hooks().setupPerms();
         }

@@ -3,7 +3,7 @@ version: ${project.version}
 main: io.github.tanguygab.mclists.MCLists
 api-version: "1.16"
 depend: [PlaceholderAPI]
-softdepend: [PlaceholderAPI, ViaVersion, Vault, TrMenu]
+softdepend: [PlaceholderAPI, ViaVersion, Vault]
 authors: [Tanguygab]
 description: A Spigot plugin allowing you to get lists of things on your Minecraft server!
 commands:

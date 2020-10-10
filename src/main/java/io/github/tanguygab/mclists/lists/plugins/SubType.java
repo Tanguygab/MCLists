@@ -11,10 +11,10 @@ import java.util.List;
 
 public abstract class SubType {
 
-    protected boolean countSelf;
+    protected String subtypeValue;
 
-    public SubType(boolean countSelf) {
-        this.countSelf = countSelf;
+    public SubType(String subtypeValue) {
+        this.subtypeValue = subtypeValue;
     }
 
     protected String format(List<String> collection) {
@@ -33,12 +33,12 @@ public abstract class SubType {
 
     public abstract String getText(Player p, Collection<? extends Plugin> list);
 
-    public static SubType compile(String subtype, boolean countSelf) {
+    public static SubType compile(String subtype, String subtypeValue) {
         switch (subtype) {
             case "normal":
-                return new Normal(countSelf);
-            case "version":
-                return new Version(countSelf);
+                return new Normal(subtypeValue);
+            case "fromauthor":
+                return new FromAuthor(subtypeValue);
             default:
                 return null;
         }

@@ -1,6 +1,5 @@
 package io.github.tanguygab.mclists;
 
-//import me.arasple.mc.trmenu.api;
 import org.bukkit.Bukkit;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
